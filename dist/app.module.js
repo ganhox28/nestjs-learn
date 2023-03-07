@@ -11,14 +11,20 @@ const common_1 = require("@nestjs/common");
 const auth_module_1 = require("./auth/auth.module");
 const user_module_1 = require("./user/user.module");
 const note_module_1 = require("./note/note.module");
+const prisma_module_1 = require("./prisma/prisma.module");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
             auth_module_1.AuthModule,
             user_module_1.UserModule,
-            note_module_1.NoteModule
+            note_module_1.NoteModule,
+            prisma_module_1.PrismaModule,
         ],
     })
 ], AppModule);
