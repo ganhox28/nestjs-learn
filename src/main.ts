@@ -11,6 +11,7 @@ async function bootstrap() {
 		whitelist: true,
 	}))
 	console.log('Hello');
+	console.log('Hello a');
 	await app.listen(3000);
 }
 
